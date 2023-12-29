@@ -4,7 +4,7 @@ import CartProduct from "../component/cartProduct";
 import emptyCartImage from "../assest/empty.gif"
 import { toast } from "react-hot-toast";
 import {loadStripe} from '@stripe/stripe-js';
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Cart = () => {
   const productCartItem = useSelector((state) => state.product.cartItem);
@@ -91,8 +91,8 @@ const Cart = () => {
               </p>
             </div>
             <button className="bg-red-500 w-full text-lg font-bold py-2 text-white hover:bg-red-600" 
-              onClick={handlePayment}>
-              Payment
+             onClick={handlePayment} >
+              <Link to={"http://localhost:3000/success"}>payment</Link>
             </button>
           </div>
         </div>
