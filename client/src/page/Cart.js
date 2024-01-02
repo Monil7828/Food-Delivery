@@ -21,33 +21,32 @@ const Cart = () => {
   );
 
   
-  
   const handlePayment = async()=>{
 
-      if(user.email){
-          const stripePromise = await loadStripe("pk_test_51OQOEoSIs4efZtZKUhD2I1wA7lkdDKPF2zhXi3kVchlUvpsXHVRjUzRaDdqrliAn5AFYexJzfnpP57URvyQzUNvl00DidzARFd")
-          const res = await fetch("http://localhost:8080/create-checkout-session",{
-            method : "POST",
-            headers  : {
-              "content-type" : "application/json"
-            },
-            body  : JSON.stringify(productCartItem)
-          })
-          if(res.statusCode === 500) return;
+    if(user.email){
+    const stripePromise = await loadStripe("pk_test_51OQOEoSIs4efZtZKUhD2I1wA7lkdDKPF2zhXi3kVchlUvpsXHVRjUzRaDdqrliAn5AFYexJzfnpP57URvyQzUNvl00DidzARFd")
 
-          const data = await res.json()
-          console.log(data)
+      const res = await fetch("http://localhost:8080/checkout-payment",{
+        method : "POST",
+        headers : {
+          "content-type" : "application/json"
+        },
+        body : JSON.stringify(productCartItem)
+      })
+      if(res.statusCode === 500) return;
+      const data = await res.json()
+      console.log(data)
 
-          toast("Redirect to payment Gateway...!")
-          stripePromise.redirectToCheckout({sessionId : data}) 
-      }
-      else{
-        toast("You have not Login!")
+      toast("Redirect to payment Gateway....")
+      stripePromise.redirectToCheckout({sessionId : data})
+    
+  }
+  else{
+    toast("You have not Login!")
         setTimeout(()=>{
           navigate("/login")
         },1000)
       }
-    
   }
   return (
     <>
@@ -92,7 +91,7 @@ const Cart = () => {
             </div>
             <button className="bg-red-500 w-full text-lg font-bold py-2 text-white hover:bg-red-600" 
              onClick={handlePayment} >
-              <Link to={"http://localhost:3000/success"}>payment</Link>
+              Payment
             </button>
           </div>
         </div>
