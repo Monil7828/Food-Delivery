@@ -1,30 +1,3 @@
-# -Build-a-COMPLETE-Fullstack-ecommerce-Responsive-MERN-App-React-Redux-Nodejs-MongoDB-Express
- Build a COMPLETE Fullstack ecommerce Responsive MERN App | React, Redux, Nodejs, MongoDB, Express
+I spearheaded the development of a sophisticated food delivery web application utilizing React JS, demonstrating adeptness in advanced development methodologies. The inclusion of a seamless shopping cart feature empowered users with the flexibility to add or remove items, enriching their experience through enhanced convenience and customization options.
 
-Backend Environment variables  : 
-
-MONGODB_URL : ""
-STRIPE_SECRET_KEY : "",
-FRONTEND_URL : "",
-
-MY Backend URL : https://backend-mern-kowt.onrender.com
-
-start : 
-
-## npm run dev 
-
-
-Frontend Environment variables  :
-
-REACT_APP_SERVER_DOMIN = <backend url>
-
-REACT_APP_ADMIN_EMAIL = <admin email id >
-
-REACT_APP_STRIPE_PUBLIC_KEY  = <stripe public key>
-
-start : 
-
-## npm start
- 
- ## Full Video on Youtube : 
-    Dynamic Coding with Amit
+Employing a robust tech stack comprising React Js, Node Js, Express Js, MongoDB, Redux, and Stripe, I meticulously designed secure checkout and payment processing features. This ensured a smooth and secure transaction flow, underscoring our commitment to delivering a seamless user experience while prioritizing data security.
